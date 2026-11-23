@@ -1,0 +1,343 @@
+{
+ "scope": {
+  "in/right": {
+   "count": 1228,
+   "of": 1377,
+   "share": 0.8918,
+   "interval_95": [
+    0.8743,
+    0.9071
+   ]
+  },
+  "in/right_gate": {
+   "count": 1191,
+   "of": 1377,
+   "share": 0.8649,
+   "interval_95": [
+    0.8459,
+    0.882
+   ]
+  },
+  "in/gated": {
+   "count": 56,
+   "of": 1377,
+   "share": 0.0407,
+   "interval_95": [
+    0.0314,
+    0.0524
+   ]
+  },
+  "out/fired": {
+   "count": 1238,
+   "of": 2623,
+   "share": 0.472,
+   "interval_95": [
+    0.4529,
+    0.4911
+   ]
+  },
+  "out/fired_gate": {
+   "count": 1140,
+   "of": 2623,
+   "share": 0.4346,
+   "interval_95": [
+    0.4158,
+    0.4537
+   ]
+  }
+ },
+ "scope_lists": [
+  {
+   "tools": [
+    "callContact",
+    "getWeather",
+    "setLights",
+    "openApp",
+    "bringItem",
+    "setBrightness",
+    "takePhoto"
+   ],
+   "out": 138,
+   "out_fired": 81,
+   "out_fired_gate": 80
+  },
+  {
+   "tools": [
+    "setAlarm",
+    "cleanRoom",
+    "callContact",
+    "setMusic"
+   ],
+   "out": 181,
+   "out_fired": 83,
+   "out_fired_gate": 78
+  },
+  {
+   "tools": [
+    "takePhoto",
+    "setBrightness",
+    "goToBase",
+    "callContact",
+    "openApp",
+    "cleanRoom",
+    "setLights"
+   ],
+   "out": 158,
+   "out_fired": 96,
+   "out_fired_gate": 86
+  },
+  {
+   "tools": [
+    "openApp",
+    "setMusic",
+    "bringItem"
+   ],
+   "out": 161,
+   "out_fired": 22,
+   "out_fired_gate": 20
+  },
+  {
+   "tools": [
+    "changeHeat",
+    "setAlarm",
+    "getBattery",
+    "bringItem"
+   ],
+   "out": 121,
+   "out_fired": 54,
+   "out_fired_gate": 52
+  },
+  {
+   "tools": [
+    "getBattery",
+    "openApp",
+    "bringItem",
+    "setBrightness",
+    "setLamp",
+    "changeHeat",
+    "setLights"
+   ],
+   "out": 71,
+   "out_fired": 32,
+   "out_fired_gate": 30
+  },
+  {
+   "tools": [
+    "callContact",
+    "setLamp",
+    "setAlarm",
+    "setBrightness"
+   ],
+   "out": 192,
+   "out_fired": 93,
+   "out_fired_gate": 76
+  },
+  {
+   "tools": [
+    "getWeather",
+    "setLanguage",
+    "goToBase"
+   ],
+   "out": 186,
+   "out_fired": 74,
+   "out_fired_gate": 65
+  },
+  {
+   "tools": [
+    "getBattery",
+    "changeHeat",
+    "cleanRoom",
+    "setAlarm",
+    "setLamp",
+    "setLanguage",
+    "takePhoto"
+   ],
+   "out": 119,
+   "out_fired": 64,
+   "out_fired_gate": 65
+  },
+  {
+   "tools": [
+    "setLanguage",
+    "callContact",
+    "setLights",
+    "setBrightness",
+    "changeVolume",
+    "getBattery",
+    "getWeather",
+    "goToBase"
+   ],
+   "out": 106,
+   "out_fired": 84,
+   "out_fired_gate": 66
+  },
+  {
+   "tools": [
+    "bringItem",
+    "getWeather",
+    "setMusic",
+    "openApp"
+   ],
+   "out": 161,
+   "out_fired": 51,
+   "out_fired_gate": 48
+  },
+  {
+   "tools": [
+    "cleanRoom",
+    "changeVolume",
+    "setAlarm",
+    "goToBase",
+    "bringItem",
+    "callContact",
+    "changeHeat",
+    "setTimer"
+   ],
+   "out": 83,
+   "out_fired": 49,
+   "out_fired_gate": 51
+  },
+  {
+   "tools": [
+    "takePhoto",
+    "callContact",
+    "changeHeat",
+    "bringItem",
+    "setAlarm"
+   ],
+   "out": 121,
+   "out_fired": 62,
+   "out_fired_gate": 56
+  },
+  {
+   "tools": [
+    "setBrightness",
+    "callContact",
+    "changeHeat",
+    "setLights",
+    "changeVolume",
+    "cleanRoom"
+   ],
+   "out": 61,
+   "out_fired": 13,
+   "out_fired_gate": 12
+  },
+  {
+   "tools": [
+    "setMusic",
+    "bringItem",
+    "openApp",
+    "changeHeat",
+    "setLamp",
+    "getBattery"
+   ],
+   "out": 94,
+   "out_fired": 69,
+   "out_fired_gate": 71
+  },
+  {
+   "tools": [
+    "openApp",
+    "setMusic",
+    "setLanguage",
+    "setLamp"
+   ],
+   "out": 159,
+   "out_fired": 67,
+   "out_fired_gate": 62
+  },
+  {
+   "tools": [
+    "setLanguage",
+    "getBattery",
+    "setTimer",
+    "setAlarm",
+    "takePhoto",
+    "bringItem",
+    "setMusic",
+    "setLamp"
+   ],
+   "out": 139,
+   "out_fired": 74,
+   "out_fired_gate": 70
+  },
+  {
+   "tools": [
+    "setLights",
+    "getBattery",
+    "setTimer",
+    "cleanRoom",
+    "getWeather",
+    "setMusic",
+    "openApp",
+    "bringItem"
+   ],
+   "out": 119,
+   "out_fired": 85,
+   "out_fired_gate": 85
+  },
+  {
+   "tools": [
+    "callContact",
+    "setLamp",
+    "setLights",
+    "getBattery",
+    "changeHeat",
+    "setTimer",
+    "setMusic"
+   ],
+   "out": 72,
+   "out_fired": 32,
+   "out_fired_gate": 13
+  },
+  {
+   "tools": [
+    "setBrightness",
+    "openApp",
+    "setMusic"
+   ],
+   "out": 181,
+   "out_fired": 53,
+   "out_fired_gate": 54
+  }
+ ],
+ "tv": {
+  "clips": 300,
+  "vad_says_speech": {
+   "count": 294,
+   "of": 300,
+   "share": 0.98,
+   "interval_95": [
+    0.9571,
+    0.9908
+   ]
+  },
+  "fired": {
+   "count": 152,
+   "of": 300,
+   "share": 0.5067,
+   "interval_95": [
+    0.4504,
+    0.5628
+   ]
+  },
+  "fired_doNothing": {
+   "count": 144,
+   "of": 300,
+   "share": 0.48,
+   "interval_95": [
+    0.4241,
+    0.5364
+   ]
+  },
+  "fired_doNothing_and_vad": {
+   "count": 144,
+   "of": 300,
+   "share": 0.48,
+   "interval_95": [
+    0.4241,
+    0.5364
+   ]
+  }
+ }
+}

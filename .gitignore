@@ -4,3 +4,4 @@ upstream/
 __pycache__/
 random_lists.log
 wordings.log
+scope.log

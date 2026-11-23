@@ -6,9 +6,10 @@
 
 1. **A good voice-activity detector solves noise.** Silero VAD cut false calls on everyday sounds from 98% to 2%.
 2. **The "no action" tool depends on its wording.** Named `doNothing` it fixed sounds for 10 of 20 random tool lists; with my first wording, 3 of 20. It costs about 6% of real commands.
-3. **Speech that is not a command is the open problem.** Meeting conversation triggered a tool call 82% of the time. The detector, the best gate wording and a confidence threshold each helped, and none got it below about 40%.
+3. **Speech that is not a command is the open problem.** Meeting conversation triggered a tool call 82% of the time and a TV monologue 51%. The detector, the best gate wording and a confidence threshold each helped somewhere, and none got either below about 40%.
+4. **So is a request no tool covers.** With a wake word in front the model only hears requests. Asked for something its tool list cannot do, it called a tool anyway 47% of the time, 43% with the gate.
 
-This page has been rewritten three times as controls overturned earlier readings; the history is at the end, with the limits.
+This page has been rewritten several times as controls overturned earlier readings; the history is at the end, with the limits.
 
 ## Setup
 
@@ -17,6 +18,7 @@ This page has been rewritten three times as controls overturned earlier readings
 | Commands | 200 | Fluent Speech Commands test clips (smart-home commands, 73 speakers) |
 | Read speech | 300 | LibriSpeech audiobook speech |
 | Meeting speech | 300 | AMI meeting utterances of 1.5 to 6 s, single distant microphone |
+| TV speech | 300 | A late-night TV monologue (the "Meanwhile" set), 4-second windows |
 | Sounds | 300 | ESC-50: dogs, rain, engines, keyboards |
 | Synthetic | 21 | Silence, white noise and pink noise at three levels |
 
@@ -85,7 +87,22 @@ Other things that move the speech figure:
 - **Length.** Read speech cut to its first 3 seconds fired 56% of the time.
 - **Another device's commands.** 42% of the smart-home commands called a vacuum tool from the vendor list.
 
+**A second source agrees on the floor, not on the gate.** The TV monologue fired 51% [45–56] with no gate and 48% [42–54] with `doNothing`; the detector passed 294 of 300 windows. The gate that halved the meeting figure did almost nothing here.
+
 Examples from meetings, home list: "Thank you very much" called `bringItem(socks)`; "Welcome back" called `setLights(on)`.
+
+## 4. A request no tool covers
+
+A wake word or a push-to-talk button would stop most of the speech above from reaching the model. What remains is a real request the tool list cannot serve. NeuDecide's README says it returns `[]` when no tool applies.
+
+The 200 spoken commands against 20 random tool lists: a command is in scope for a list that holds its tool, out of scope otherwise.
+
+| | No gate | With `doNothing` |
+| --- | ---: | ---: |
+| In scope: right tool | 89% | 86.5% |
+| Out of scope: called a tool anyway | 47% | 43% |
+
+By list, the out-of-scope figure ran from 14% to 79% (median 47%) with no gate, and from 12% to 76% (median 43%) with it. I give no intervals because the same 200 commands recur across lists.
 
 ## Checks that this is not my own artefact
 
@@ -98,6 +115,7 @@ Examples from meetings, home list: "Thank you very much" called `bringItem(socks
 - **Black box.** I do not know why a tool list fires or not. One list of six fired on 2% of sounds; adding one tool took it to 98%; renaming that tool changed nothing.
 - **Tools and wording are mine.** 17 tools in one writing style and five gate wordings. A sixth wording could do better than `doNothing`; nothing here says which wording is best in general.
 - **The confidence threshold is fitted and tested on one tool list.**
+- **No wake word in sections 1 to 3.** A deployed device may only pass audio to the model after one, which would remove most of that speech. Section 4 is the case that survives it.
 - **Meeting speech is a hard case.** AMI is recorded far from the speakers, and the meetings are about designing a remote control, so words like "volume" come up. One meeting split, 300 utterances.
 - **The 0.3 s detector rule is my choice.** A stricter rule would pass less and lose more commands.
 - **No general accuracy figure.** Fluent Speech Commands is small and clean, and I wrote the sentence-to-tool mapping.
@@ -109,7 +127,7 @@ Examples from meetings, home list: "Thank you very much" called `bringItem(socks
 1. First: "98% of sounds trigger a call; the `noAction` tool cuts it to 4%." True for one tool list.
 2. Then: "the rate swings from 2% to 99% with the tool list." Four lists made that look typical. Forty random lists show nearly all fire, and the 2% list was the outlier.
 3. Then: "the `noAction` tool fixed 4 of 36 lists, so the gate tool mostly does not work." True of that wording. A different wording fixed half.
-4. Now: as above.
+4. Now: as above, with a second speech source and out-of-scope requests added.
 
 ## Reproduce
 
@@ -130,10 +148,11 @@ python silero_check.py   # Silero VAD, loudness check
 python wordings.py       # five gate wordings on 12 lists (slow)
 python do_nothing.py     # the best wording on 20 fresh lists, and its cost
 python confidence.py     # headset microphone, command words, confidence threshold
+python scope.py          # requests no tool covers, TV speech (slow)
 ```
 
 Results are in `results/`.
 
 ## Credits
 
-Fluent Speech Commands (Lugosch et al., 2019), LibriSpeech (Panayotov et al., 2015, CC BY 4.0), AMI Meeting Corpus (Carletta et al., 2005, CC BY 4.0), ESC-50 (Piczak, 2015, CC BY-NC), Silero VAD (MIT).
+Fluent Speech Commands (Lugosch et al., 2019), LibriSpeech (Panayotov et al., 2015, CC BY 4.0), AMI Meeting Corpus (Carletta et al., 2005, CC BY 4.0), the Meanwhile set (distil-whisper), ESC-50 (Piczak, 2015, CC BY-NC), Silero VAD (MIT).

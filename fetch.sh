@@ -21,3 +21,7 @@ python - <<'PY'
 from huggingface_hub import hf_hub_download
 hf_hub_download('edinburghcstr/ami', 'ihm/validation-00004-of-00005.parquet', repo_type='dataset', local_dir='ami')
 PY
+python - <<'PY'
+from huggingface_hub import hf_hub_download
+hf_hub_download('distil-whisper/meanwhile', 'data/test-00000-of-00001-313dec7dc01b89d3.parquet', repo_type='dataset', local_dir='meanwhile')
+PY
