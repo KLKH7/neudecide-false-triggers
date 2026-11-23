@@ -1,0 +1,578 @@
+{
+ "invalid_arguments": {
+  "plain/commands": {
+   "calls": 200,
+   "missing_required": 20,
+   "value_outside_enum": 10,
+   "examples": [
+    [
+     "room=bathroom",
+     6
+    ],
+    [
+     "room=ashroom",
+     1
+    ],
+    [
+     "state=pause",
+     1
+    ],
+    [
+     "direction=off",
+     1
+    ],
+    [
+     "item=dunes",
+     1
+    ]
+   ]
+  },
+  "plain/non_commands": {
+   "calls": 410,
+   "missing_required": 256,
+   "value_outside_enum": 8,
+   "examples": [
+    [
+     "item=wet",
+     1
+    ],
+    [
+     "room=inside",
+     1
+    ],
+    [
+     "item=grass smells",
+     1
+    ],
+    [
+     "item=violex",
+     1
+    ],
+    [
+     "item=sung",
+     1
+    ],
+    [
+     "room=room inside",
+     1
+    ]
+   ]
+  },
+  "gate/commands": {
+   "calls": 193,
+   "missing_required": 16,
+   "value_outside_enum": 9,
+   "examples": [
+    [
+     "room=bathroom",
+     6
+    ],
+    [
+     "room=ashroom",
+     1
+    ],
+    [
+     "direction=off",
+     1
+    ],
+    [
+     "item=dunes",
+     1
+    ]
+   ]
+  },
+  "gate/non_commands": {
+   "calls": 133,
+   "missing_required": 5,
+   "value_outside_enum": 14,
+   "examples": [
+    [
+     "item=meatue",
+     1
+    ],
+    [
+     "item=wolf's paws",
+     1
+    ],
+    [
+     "item=wet",
+     1
+    ],
+    [
+     "item=spoe",
+     1
+    ],
+    [
+     "item=jees",
+     1
+    ],
+    [
+     "room=inside",
+     1
+    ]
+   ]
+  },
+  "gate_alt/commands": {
+   "calls": 194,
+   "missing_required": 15,
+   "value_outside_enum": 9,
+   "examples": [
+    [
+     "room=bathroom",
+     6
+    ],
+    [
+     "room=ashroom",
+     1
+    ],
+    [
+     "state=pause",
+     1
+    ],
+    [
+     "item=dunes",
+     1
+    ]
+   ]
+  },
+  "gate_alt/non_commands": {
+   "calls": 356,
+   "missing_required": 269,
+   "value_outside_enum": 11,
+   "examples": [
+    [
+     "item=meatue",
+     1
+    ],
+    [
+     "item=wolf's paws",
+     1
+    ],
+    [
+     "item=wet",
+     1
+    ],
+    [
+     "item=spoe",
+     1
+    ],
+    [
+     "room=inside",
+     1
+    ],
+    [
+     "item=she",
+     1
+    ]
+   ]
+  }
+ },
+ "paired": {
+  "gate/commands": {
+   "stopped_acting": 7,
+   "started_acting": 0
+  },
+  "gate/speech": {
+   "stopped_acting": 15,
+   "started_acting": 39
+  },
+  "gate/sounds": {
+   "stopped_acting": 286,
+   "started_acting": 5
+  },
+  "gate_alt/commands": {
+   "stopped_acting": 6,
+   "started_acting": 0
+  },
+  "gate_alt/speech": {
+   "stopped_acting": 47,
+   "started_acting": 21
+  },
+  "gate_alt/sounds": {
+   "stopped_acting": 25,
+   "started_acting": 3
+  }
+ },
+ "tool_order": {
+  "reversed": {
+   "commands": {
+    "count": 199,
+    "of": 200,
+    "share": 0.995,
+    "interval_95": [
+     0.9722,
+     0.9991
+    ]
+   },
+   "speech": {
+    "count": 116,
+    "of": 300,
+    "share": 0.3867,
+    "interval_95": [
+     0.3333,
+     0.4429
+    ]
+   },
+   "sounds": {
+    "count": 298,
+    "of": 300,
+    "share": 0.9933,
+    "interval_95": [
+     0.976,
+     0.9982
+    ]
+   },
+   "synthetic": {
+    "count": 20,
+    "of": 21,
+    "share": 0.9524,
+    "interval_95": [
+     0.7733,
+     0.9915
+    ]
+   }
+  },
+  "gate_first": {
+   "commands": {
+    "count": 192,
+    "of": 200,
+    "share": 0.96,
+    "interval_95": [
+     0.9231,
+     0.9796
+    ]
+   },
+   "commands_right": {
+    "count": 176,
+    "of": 200,
+    "share": 0.88,
+    "interval_95": [
+     0.8277,
+     0.918
+    ]
+   },
+   "speech": {
+    "count": 126,
+    "of": 300,
+    "share": 0.42,
+    "interval_95": [
+     0.3655,
+     0.4765
+    ]
+   },
+   "sounds": {
+    "count": 10,
+    "of": 300,
+    "share": 0.0333,
+    "interval_95": [
+     0.0182,
+     0.0603
+    ]
+   },
+   "synthetic": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   }
+  },
+  "gate_alt_first": {
+   "commands": {
+    "count": 185,
+    "of": 200,
+    "share": 0.925,
+    "interval_95": [
+     0.88,
+     0.954
+    ]
+   },
+   "speech": {
+    "count": 55,
+    "of": 300,
+    "share": 0.1833,
+    "interval_95": [
+     0.1436,
+     0.231
+    ]
+   },
+   "sounds": {
+    "count": 9,
+    "of": 300,
+    "share": 0.03,
+    "interval_95": [
+     0.0159,
+     0.056
+    ]
+   },
+   "synthetic": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   }
+  }
+ },
+ "tool_order_false_call_tools": {
+  "reversed": [
+   [
+    "bringItem",
+    369
+   ],
+   [
+    "setLanguage",
+    35
+   ],
+   [
+    "setLamp",
+    10
+   ],
+   [
+    "changeHeat",
+    7
+   ],
+   [
+    "setLights",
+    5
+   ],
+   [
+    "changeVolume",
+    5
+   ],
+   [
+    "setMusic",
+    3
+   ]
+  ],
+  "gate_first": [
+   [
+    "noAction",
+    354
+   ],
+   [
+    "bringItem",
+    105
+   ],
+   [
+    "changeHeat",
+    10
+   ],
+   [
+    "setLights",
+    9
+   ],
+   [
+    "setLamp",
+    7
+   ],
+   [
+    "setMusic",
+    2
+   ],
+   [
+    "changeVolume",
+    2
+   ],
+   [
+    "setLanguage",
+    1
+   ]
+  ],
+  "gate_alt_first": [
+   [
+    "ignore",
+    460
+   ],
+   [
+    "bringItem",
+    51
+   ],
+   [
+    "setLights",
+    5
+   ],
+   [
+    "changeHeat",
+    4
+   ],
+   [
+    "setMusic",
+    2
+   ],
+   [
+    "setLamp",
+    1
+   ],
+   [
+    "changeVolume",
+    1
+   ]
+  ]
+ },
+ "with_schema_check": {
+  "plain/commands": {
+   "acted": {
+    "count": 170,
+    "of": 200,
+    "share": 0.85,
+    "interval_95": [
+     0.7939,
+     0.8929
+    ]
+   },
+   "right_tool": {
+    "count": 160,
+    "of": 200,
+    "share": 0.8,
+    "interval_95": [
+     0.7391,
+     0.8495
+    ]
+   }
+  },
+  "plain/speech": {
+   "acted": {
+    "count": 88,
+    "of": 300,
+    "share": 0.2933,
+    "interval_95": [
+     0.2447,
+     0.3472
+    ]
+   }
+  },
+  "plain/sounds": {
+   "acted": {
+    "count": 53,
+    "of": 300,
+    "share": 0.1767,
+    "interval_95": [
+     0.1377,
+     0.2238
+    ]
+   }
+  },
+  "plain/synthetic": {
+   "acted": {
+    "count": 5,
+    "of": 21,
+    "share": 0.2381,
+    "interval_95": [
+     0.1063,
+     0.4509
+    ]
+   }
+  },
+  "gate/commands": {
+   "acted": {
+    "count": 168,
+    "of": 200,
+    "share": 0.84,
+    "interval_95": [
+     0.7829,
+     0.8843
+    ]
+   },
+   "right_tool": {
+    "count": 155,
+    "of": 200,
+    "share": 0.775,
+    "interval_95": [
+     0.7123,
+     0.8274
+    ]
+   }
+  },
+  "gate/speech": {
+   "acted": {
+    "count": 106,
+    "of": 300,
+    "share": 0.3533,
+    "interval_95": [
+     0.3014,
+     0.409
+    ]
+   }
+  },
+  "gate/sounds": {
+   "acted": {
+    "count": 8,
+    "of": 300,
+    "share": 0.0267,
+    "interval_95": [
+     0.0136,
+     0.0517
+    ]
+   }
+  },
+  "gate/synthetic": {
+   "acted": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   }
+  },
+  "gate_alt/commands": {
+   "acted": {
+    "count": 170,
+    "of": 200,
+    "share": 0.85,
+    "interval_95": [
+     0.7939,
+     0.8929
+    ]
+   },
+   "right_tool": {
+    "count": 155,
+    "of": 200,
+    "share": 0.775,
+    "interval_95": [
+     0.7123,
+     0.8274
+    ]
+   }
+  },
+  "gate_alt/speech": {
+   "acted": {
+    "count": 58,
+    "of": 300,
+    "share": 0.1933,
+    "interval_95": [
+     0.1526,
+     0.2418
+    ]
+   }
+  },
+  "gate_alt/sounds": {
+   "acted": {
+    "count": 17,
+    "of": 300,
+    "share": 0.0567,
+    "interval_95": [
+     0.0357,
+     0.0889
+    ]
+   }
+  },
+  "gate_alt/synthetic": {
+   "acted": {
+    "count": 1,
+    "of": 21,
+    "share": 0.0476,
+    "interval_95": [
+     0.0085,
+     0.2267
+    ]
+   }
+  }
+ }
+}
