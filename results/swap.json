@@ -1,0 +1,147 @@
+{
+ "seven": {
+  "fired_of_100": 99,
+  "tools": [
+   [
+    "bringItem",
+    84
+   ],
+   [
+    "setLanguage",
+    9
+   ],
+   [
+    "setLamp",
+    5
+   ]
+  ]
+ },
+ "without_bringItem": {
+  "fired_of_100": 2,
+  "tools": [
+   [
+    "setLanguage",
+    1
+   ],
+   [
+    "changeVolume",
+    1
+   ]
+  ]
+ },
+ "without_setLamp": {
+  "fired_of_100": 100,
+  "tools": [
+   [
+    "bringItem",
+    55
+   ],
+   [
+    "setLanguage",
+    44
+   ],
+   [
+    "changeVolume",
+    1
+   ]
+  ]
+ },
+ "without_setLanguage": {
+  "fired_of_100": 99,
+  "tools": [
+   [
+    "bringItem",
+    98
+   ],
+   [
+    "changeVolume",
+    1
+   ]
+  ]
+ },
+ "bringItem_swapped_for_takePhoto": {
+  "fired_of_100": 89,
+  "tools": [
+   [
+    "takePhoto",
+    83
+   ],
+   [
+    "setLamp",
+    3
+   ],
+   [
+    "setLanguage",
+    2
+   ]
+  ]
+ },
+ "bringItem_swapped_for_openApp": {
+  "fired_of_100": 19,
+  "tools": [
+   [
+    "openApp",
+    9
+   ],
+   [
+    "setLanguage",
+    5
+   ],
+   [
+    "setLamp",
+    4
+   ]
+  ]
+ },
+ "bringItem_free_text_item": {
+  "fired_of_100": 100,
+  "tools": [
+   [
+    "bringItem",
+    97
+   ],
+   [
+    "setLanguage",
+    2
+   ],
+   [
+    "changeVolume",
+    1
+   ]
+  ]
+ },
+ "renamed_orderTaxi": {
+  "fired_of_100": 99,
+  "tools": [
+   [
+    "orderTaxi",
+    97
+   ],
+   [
+    "setLanguage",
+    1
+   ],
+   [
+    "setMusic",
+    1
+   ]
+  ]
+ },
+ "new_description": {
+  "fired_of_100": 99,
+  "tools": [
+   [
+    "bringItem",
+    97
+   ],
+   [
+    "setLanguage",
+    1
+   ],
+   [
+    "changeVolume",
+    1
+   ]
+  ]
+ }
+}

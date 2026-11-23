@@ -1,0 +1,514 @@
+{
+ "same_input": {
+  "count": 94,
+  "of": 96,
+  "share": 0.9792,
+  "interval_95": [
+   0.9272,
+   0.9943
+  ]
+ },
+ "lists": {
+  "vendor": {
+   "commands": {
+    "count": 84,
+    "of": 200,
+    "share": 0.42,
+    "interval_95": [
+     0.3537,
+     0.4893
+    ]
+   },
+   "speech": {
+    "count": 70,
+    "of": 300,
+    "share": 0.2333,
+    "interval_95": [
+     0.189,
+     0.2844
+    ]
+   },
+   "sounds": {
+    "count": 292,
+    "of": 300,
+    "share": 0.9733,
+    "interval_95": [
+     0.9483,
+     0.9864
+    ]
+   },
+   "synthetic": {
+    "count": 18,
+    "of": 21,
+    "share": 0.8571,
+    "interval_95": [
+     0.6536,
+     0.9502
+    ]
+   }
+  },
+  "vendor_gate": {
+   "commands": {
+    "count": 79,
+    "of": 200,
+    "share": 0.395,
+    "interval_95": [
+     0.3298,
+     0.4641
+    ]
+   },
+   "speech": {
+    "count": 60,
+    "of": 300,
+    "share": 0.2,
+    "interval_95": [
+     0.1587,
+     0.2489
+    ]
+   },
+   "sounds": {
+    "count": 13,
+    "of": 300,
+    "share": 0.0433,
+    "interval_95": [
+     0.0255,
+     0.0727
+    ]
+   },
+   "synthetic": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   }
+  },
+  "other_domain": {
+   "commands": {
+    "count": 113,
+    "of": 200,
+    "share": 0.565,
+    "interval_95": [
+     0.4957,
+     0.6318
+    ]
+   },
+   "speech": {
+    "count": 122,
+    "of": 300,
+    "share": 0.4067,
+    "interval_95": [
+     0.3526,
+     0.4631
+    ]
+   },
+   "sounds": {
+    "count": 298,
+    "of": 300,
+    "share": 0.9933,
+    "interval_95": [
+     0.976,
+     0.9982
+    ]
+   },
+   "synthetic": {
+    "count": 21,
+    "of": 21,
+    "share": 1.0,
+    "interval_95": [
+     0.8454,
+     1.0
+    ]
+   }
+  },
+  "other_domain_gate": {
+   "commands": {
+    "count": 114,
+    "of": 200,
+    "share": 0.57,
+    "interval_95": [
+     0.5007,
+     0.6367
+    ]
+   },
+   "speech": {
+    "count": 96,
+    "of": 300,
+    "share": 0.32,
+    "interval_95": [
+     0.2698,
+     0.3748
+    ]
+   },
+   "sounds": {
+    "count": 295,
+    "of": 300,
+    "share": 0.9833,
+    "interval_95": [
+     0.9616,
+     0.9929
+    ]
+   },
+   "synthetic": {
+    "count": 21,
+    "of": 21,
+    "share": 1.0,
+    "interval_95": [
+     0.8454,
+     1.0
+    ]
+   }
+  },
+  "sink_last": {
+   "commands": {
+    "count": 200,
+    "of": 200,
+    "share": 1.0,
+    "interval_95": [
+     0.9812,
+     1.0
+    ]
+   },
+   "speech": {
+    "count": 172,
+    "of": 300,
+    "share": 0.5733,
+    "interval_95": [
+     0.5168,
+     0.628
+    ]
+   },
+   "sounds": {
+    "count": 300,
+    "of": 300,
+    "share": 1.0,
+    "interval_95": [
+     0.9874,
+     1.0
+    ]
+   },
+   "synthetic": {
+    "count": 21,
+    "of": 21,
+    "share": 1.0,
+    "interval_95": [
+     0.8454,
+     1.0
+    ]
+   }
+  },
+  "sink_first": {
+   "commands": {
+    "count": 200,
+    "of": 200,
+    "share": 1.0,
+    "interval_95": [
+     0.9812,
+     1.0
+    ]
+   },
+   "speech": {
+    "count": 159,
+    "of": 300,
+    "share": 0.53,
+    "interval_95": [
+     0.4735,
+     0.5857
+    ]
+   },
+   "sounds": {
+    "count": 299,
+    "of": 300,
+    "share": 0.9967,
+    "interval_95": [
+     0.9814,
+     0.9994
+    ]
+   },
+   "synthetic": {
+    "count": 21,
+    "of": 21,
+    "share": 1.0,
+    "interval_95": [
+     0.8454,
+     1.0
+    ]
+   }
+  },
+  "no_bring": {
+   "commands": {
+    "count": 178,
+    "of": 200,
+    "share": 0.89,
+    "interval_95": [
+     0.8391,
+     0.9262
+    ]
+   },
+   "speech": {
+    "count": 17,
+    "of": 300,
+    "share": 0.0567,
+    "interval_95": [
+     0.0357,
+     0.0889
+    ]
+   },
+   "sounds": {
+    "count": 7,
+    "of": 300,
+    "share": 0.0233,
+    "interval_95": [
+     0.0113,
+     0.0474
+    ]
+   },
+   "synthetic": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   }
+  }
+ },
+ "false_call_tools": {
+  "vendor": [
+   [
+    "goToBase",
+    377
+   ],
+   [
+    "getBattery",
+    2
+   ],
+   [
+    "cleanRoom",
+    1
+   ]
+  ],
+  "vendor_gate": [
+   [
+    "noAction",
+    397
+   ],
+   [
+    "goToBase",
+    71
+   ],
+   [
+    "cleanRoom",
+    1
+   ],
+   [
+    "getBattery",
+    1
+   ]
+  ],
+  "other_domain": [
+   [
+    "setTimer",
+    306
+   ],
+   [
+    "getWeather",
+    52
+   ],
+   [
+    "callContact",
+    52
+   ],
+   [
+    "setBrightness",
+    15
+   ],
+   [
+    "openApp",
+    8
+   ]
+  ],
+  "other_domain_gate": [
+   [
+    "setTimer",
+    307
+   ],
+   [
+    "noAction",
+    112
+   ],
+   [
+    "callContact",
+    54
+   ],
+   [
+    "getWeather",
+    27
+   ],
+   [
+    "setBrightness",
+    16
+   ]
+  ],
+  "sink_last": [
+   [
+    "bringItem",
+    414
+   ],
+   [
+    "getBattery",
+    27
+   ],
+   [
+    "setLamp",
+    21
+   ],
+   [
+    "changeHeat",
+    10
+   ],
+   [
+    "setLights",
+    9
+   ]
+  ],
+  "sink_first": [
+   [
+    "getBattery",
+    308
+   ],
+   [
+    "bringItem",
+    116
+   ],
+   [
+    "setLamp",
+    18
+   ],
+   [
+    "setLights",
+    15
+   ],
+   [
+    "changeHeat",
+    12
+   ]
+  ],
+  "no_bring": [
+   [
+    "changeHeat",
+    7
+   ],
+   [
+    "setLanguage",
+    6
+   ],
+   [
+    "setLamp",
+    4
+   ],
+   [
+    "setLights",
+    3
+   ],
+   [
+    "setMusic",
+    2
+   ]
+  ]
+ },
+ "extra": {
+  "sink_last/right_tool": {
+   "count": 187,
+   "of": 200,
+   "share": 0.935,
+   "interval_95": [
+    0.892,
+    0.9616
+   ]
+  },
+  "sink_first/right_tool": {
+   "count": 186,
+   "of": 200,
+   "share": 0.93,
+   "interval_95": [
+    0.8859,
+    0.9578
+   ]
+  },
+  "no_bring/right_tool": {
+   "count": 163,
+   "of": 200,
+   "share": 0.815,
+   "interval_95": [
+    0.7554,
+    0.8627
+   ]
+  },
+  "short_speech/plain": {
+   "count": 167,
+   "of": 300,
+   "share": 0.5567,
+   "interval_95": [
+    0.5001,
+    0.6118
+   ]
+  },
+  "short_speech/gate": {
+   "count": 158,
+   "of": 300,
+   "share": 0.5267,
+   "interval_95": [
+    0.4702,
+    0.5825
+   ]
+  },
+  "unconstrained_acted/sounds": {
+   "count": 99,
+   "of": 100,
+   "share": 0.99,
+   "interval_95": [
+    0.9455,
+    0.9982
+   ]
+  },
+  "unconstrained_acted/synthetic": {
+   "count": 20,
+   "of": 21,
+   "share": 0.9524,
+   "interval_95": [
+    0.7733,
+    0.9915
+   ]
+  }
+ },
+ "unconstrained_examples": [
+  [
+   "[{\"name\": \"bringItem\", \"arguments\": {}}]",
+   96
+  ],
+  [
+   "[{\"name\": \"setLamp\", \"arguments\": {\"state\": \"on\"}}]",
+   8
+  ],
+  [
+   "[{\"name\": \"setLanguage\", \"arguments\": {\"language\": \"English\"",
+   6
+  ],
+  [
+   "[{\"name\": \"setLanguage\", \"arguments\": {\"language\": \"Korean\"}",
+   4
+  ],
+  [
+   "[]",
+   2
+  ],
+  [
+   "[{\"name\": \"bringItem\", \"arguments\": {\"item\": \"socks\"}}]",
+   2
+  ]
+ ]
+}

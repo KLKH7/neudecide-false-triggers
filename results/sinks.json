@@ -1,0 +1,102 @@
+{
+ "alone": {
+  "home/setLights": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "home/setLamp": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "home/setMusic": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "home/changeHeat": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "home/changeVolume": {
+   "sounds": 1,
+   "speech": 0
+  },
+  "home/bringItem": {
+   "sounds": 68,
+   "speech": 10
+  },
+  "home/setLanguage": {
+   "sounds": 0,
+   "speech": 1
+  },
+  "vendor/cleanRoom": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "vendor/goToBase": {
+   "sounds": 7,
+   "speech": 5
+  },
+  "vendor/getBattery": {
+   "sounds": 1,
+   "speech": 1
+  },
+  "phone/setTimer": {
+   "sounds": 1,
+   "speech": 0
+  },
+  "phone/getWeather": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "phone/callContact": {
+   "sounds": 10,
+   "speech": 1
+  },
+  "phone/setAlarm": {
+   "sounds": 1,
+   "speech": 0
+  },
+  "phone/takePhoto": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "phone/setBrightness": {
+   "sounds": 0,
+   "speech": 0
+  },
+  "phone/openApp": {
+   "sounds": 1,
+   "speech": 0
+  }
+ },
+ "variants": {
+  "original": {
+   "sounds": 99,
+   "speech": 30
+  },
+  "renamed_fetchItem": {
+   "sounds": 99,
+   "speech": 17
+  },
+  "renamed_orderTaxi": {
+   "sounds": 99,
+   "speech": 27
+  },
+  "new_description": {
+   "sounds": 99,
+   "speech": 28
+  },
+  "argument_optional": {
+   "sounds": 100,
+   "speech": 35
+  },
+  "bring_first": {
+   "sounds": 100,
+   "speech": 43
+  }
+ },
+ "quantised_changed_answer": [
+  15,
+  200
+ ]
+}
