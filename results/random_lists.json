@@ -1,0 +1,687 @@
+{
+ "percent_fired": {
+  "sounds": {
+   "min": 2,
+   "quartile_1": 96,
+   "median": 100.0,
+   "quartile_3": 100,
+   "max": 100,
+   "lists_at_most_10pct": 3,
+   "lists_at_least_90pct": 34
+  },
+  "sounds_gate": {
+   "min": 2,
+   "quartile_1": 34,
+   "median": 97.0,
+   "quartile_3": 100,
+   "max": 100,
+   "lists_at_most_10pct": 6,
+   "lists_at_least_90pct": 23
+  },
+  "speech": {
+   "min": 2,
+   "quartile_1": 20,
+   "median": 32.0,
+   "quartile_3": 56,
+   "max": 74,
+   "lists_at_most_10pct": 2,
+   "lists_at_least_90pct": 0
+  },
+  "speech_gate": {
+   "min": 2,
+   "quartile_1": 16,
+   "median": 33.0,
+   "quartile_3": 52,
+   "max": 70,
+   "lists_at_most_10pct": 5,
+   "lists_at_least_90pct": 0
+  }
+ },
+ "gate_fixed_sounds": {
+  "lists_at_least_50pct_without_gate": 36,
+  "of_those_at_most_10pct_with_gate": 4,
+  "of_those_still_at_least_50pct": 28
+ },
+ "sounds_by_tool_present": {
+  "setLights": {
+   "lists_with": 14,
+   "mean_pct_with": 87,
+   "mean_pct_without": 89.7
+  },
+  "setLamp": {
+   "lists_with": 15,
+   "mean_pct_with": 95.9,
+   "mean_pct_without": 84.5
+  },
+  "setMusic": {
+   "lists_with": 14,
+   "mean_pct_with": 91.6,
+   "mean_pct_without": 87.2
+  },
+  "changeHeat": {
+   "lists_with": 13,
+   "mean_pct_with": 93.1,
+   "mean_pct_without": 86.7
+  },
+  "changeVolume": {
+   "lists_with": 7,
+   "mean_pct_with": 74.9,
+   "mean_pct_without": 91.7
+  },
+  "bringItem": {
+   "lists_with": 16,
+   "mean_pct_with": 99.5,
+   "mean_pct_without": 81.6
+  },
+  "setLanguage": {
+   "lists_with": 11,
+   "mean_pct_with": 98.9,
+   "mean_pct_without": 84.9
+  },
+  "setTimer": {
+   "lists_with": 7,
+   "mean_pct_with": 98.9,
+   "mean_pct_without": 86.6
+  },
+  "getWeather": {
+   "lists_with": 13,
+   "mean_pct_with": 99.7,
+   "mean_pct_without": 83.5
+  },
+  "callContact": {
+   "lists_with": 14,
+   "mean_pct_with": 92.4,
+   "mean_pct_without": 86.8
+  },
+  "setAlarm": {
+   "lists_with": 19,
+   "mean_pct_with": 87.8,
+   "mean_pct_without": 89.6
+  },
+  "takePhoto": {
+   "lists_with": 10,
+   "mean_pct_with": 99.4,
+   "mean_pct_without": 85.2
+  },
+  "setBrightness": {
+   "lists_with": 16,
+   "mean_pct_with": 73.9,
+   "mean_pct_without": 98.7
+  },
+  "openApp": {
+   "lists_with": 17,
+   "mean_pct_with": 91.9,
+   "mean_pct_without": 86.4
+  },
+  "cleanRoom": {
+   "lists_with": 16,
+   "mean_pct_with": 86.6,
+   "mean_pct_without": 90.2
+  },
+  "goToBase": {
+   "lists_with": 13,
+   "mean_pct_with": 97.7,
+   "mean_pct_without": 84.4
+  },
+  "getBattery": {
+   "lists_with": 18,
+   "mean_pct_with": 88.7,
+   "mean_pct_without": 88.8
+  }
+ },
+ "lists": [
+  {
+   "tools": [
+    "goToBase",
+    "bringItem",
+    "setMusic",
+    "openApp",
+    "getWeather",
+    "setLamp",
+    "setBrightness"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 37,
+   "speech_gate": 28
+  },
+  {
+   "tools": [
+    "setBrightness",
+    "bringItem",
+    "setLights",
+    "setAlarm",
+    "setLamp",
+    "getBattery"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 27,
+   "speech_gate": 27
+  },
+  {
+   "tools": [
+    "getWeather",
+    "changeHeat",
+    "setAlarm",
+    "setBrightness",
+    "setLights",
+    "changeVolume"
+   ],
+   "sounds": 48,
+   "sounds_gate": 38,
+   "speech": 10,
+   "speech_gate": 9
+  },
+  {
+   "tools": [
+    "cleanRoom",
+    "setAlarm",
+    "setLights",
+    "getBattery",
+    "setBrightness"
+   ],
+   "sounds": 1,
+   "sounds_gate": 1,
+   "speech": 6,
+   "speech_gate": 4
+  },
+  {
+   "tools": [
+    "setLamp",
+    "goToBase",
+    "openApp",
+    "cleanRoom",
+    "setBrightness"
+   ],
+   "sounds": 37,
+   "sounds_gate": 12,
+   "speech": 10,
+   "speech_gate": 8
+  },
+  {
+   "tools": [
+    "setTimer",
+    "setLanguage",
+    "openApp",
+    "takePhoto",
+    "getBattery",
+    "callContact",
+    "setLamp"
+   ],
+   "sounds": 49,
+   "sounds_gate": 49,
+   "speech": 14,
+   "speech_gate": 11
+  },
+  {
+   "tools": [
+    "setAlarm",
+    "openApp",
+    "setLanguage",
+    "getWeather",
+    "bringItem",
+    "callContact",
+    "getBattery",
+    "cleanRoom"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 33,
+   "speech_gate": 30
+  },
+  {
+   "tools": [
+    "setLamp",
+    "getWeather",
+    "changeVolume",
+    "cleanRoom",
+    "setMusic",
+    "setLights"
+   ],
+   "sounds": 50,
+   "sounds_gate": 49,
+   "speech": 15,
+   "speech_gate": 11
+  },
+  {
+   "tools": [
+    "setBrightness",
+    "goToBase",
+    "setAlarm",
+    "getBattery",
+    "takePhoto"
+   ],
+   "sounds": 50,
+   "sounds_gate": 42,
+   "speech": 10,
+   "speech_gate": 4
+  },
+  {
+   "tools": [
+    "getWeather",
+    "setLights",
+    "setBrightness",
+    "setLanguage"
+   ],
+   "sounds": 50,
+   "sounds_gate": 8,
+   "speech": 7,
+   "speech_gate": 7
+  },
+  {
+   "tools": [
+    "getBattery",
+    "callContact",
+    "takePhoto",
+    "setMusic",
+    "changeHeat",
+    "setAlarm"
+   ],
+   "sounds": 50,
+   "sounds_gate": 2,
+   "speech": 10,
+   "speech_gate": 8
+  },
+  {
+   "tools": [
+    "goToBase",
+    "cleanRoom",
+    "getWeather",
+    "takePhoto",
+    "setAlarm",
+    "setBrightness",
+    "setMusic",
+    "setLanguage"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 22,
+   "speech_gate": 19
+  },
+  {
+   "tools": [
+    "setLamp",
+    "changeVolume",
+    "openApp",
+    "goToBase",
+    "setAlarm",
+    "getBattery",
+    "setLanguage",
+    "getWeather"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 31,
+   "speech_gate": 19
+  },
+  {
+   "tools": [
+    "setAlarm",
+    "bringItem",
+    "takePhoto",
+    "cleanRoom"
+   ],
+   "sounds": 49,
+   "sounds_gate": 50,
+   "speech": 12,
+   "speech_gate": 14
+  },
+  {
+   "tools": [
+    "callContact",
+    "getWeather",
+    "cleanRoom",
+    "openApp",
+    "goToBase",
+    "bringItem",
+    "setLanguage",
+    "setMusic"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 37,
+   "speech_gate": 26
+  },
+  {
+   "tools": [
+    "openApp",
+    "callContact",
+    "setAlarm",
+    "changeHeat",
+    "cleanRoom",
+    "goToBase",
+    "setLights"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 18,
+   "speech_gate": 15
+  },
+  {
+   "tools": [
+    "setTimer",
+    "setLamp",
+    "cleanRoom",
+    "openApp",
+    "getBattery",
+    "goToBase"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 22,
+   "speech_gate": 23
+  },
+  {
+   "tools": [
+    "changeHeat",
+    "setLamp",
+    "bringItem",
+    "setLights"
+   ],
+   "sounds": 49,
+   "sounds_gate": 3,
+   "speech": 17,
+   "speech_gate": 20
+  },
+  {
+   "tools": [
+    "cleanRoom",
+    "setTimer",
+    "changeHeat",
+    "goToBase",
+    "getBattery",
+    "setAlarm"
+   ],
+   "sounds": 48,
+   "sounds_gate": 32,
+   "speech": 12,
+   "speech_gate": 8
+  },
+  {
+   "tools": [
+    "setBrightness",
+    "setAlarm",
+    "changeVolume",
+    "getBattery"
+   ],
+   "sounds": 2,
+   "sounds_gate": 9,
+   "speech": 6,
+   "speech_gate": 3
+  },
+  {
+   "tools": [
+    "callContact",
+    "getWeather",
+    "setLights",
+    "openApp",
+    "bringItem",
+    "setBrightness",
+    "takePhoto"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 32,
+   "speech_gate": 31
+  },
+  {
+   "tools": [
+    "setAlarm",
+    "cleanRoom",
+    "callContact",
+    "setMusic"
+   ],
+   "sounds": 47,
+   "sounds_gate": 48,
+   "speech": 6,
+   "speech_gate": 6
+  },
+  {
+   "tools": [
+    "takePhoto",
+    "setBrightness",
+    "goToBase",
+    "callContact",
+    "openApp",
+    "cleanRoom",
+    "setLights"
+   ],
+   "sounds": 50,
+   "sounds_gate": 10,
+   "speech": 15,
+   "speech_gate": 12
+  },
+  {
+   "tools": [
+    "openApp",
+    "setMusic",
+    "bringItem"
+   ],
+   "sounds": 48,
+   "sounds_gate": 47,
+   "speech": 13,
+   "speech_gate": 18
+  },
+  {
+   "tools": [
+    "changeHeat",
+    "setAlarm",
+    "getBattery",
+    "bringItem"
+   ],
+   "sounds": 50,
+   "sounds_gate": 47,
+   "speech": 22,
+   "speech_gate": 21
+  },
+  {
+   "tools": [
+    "getBattery",
+    "openApp",
+    "bringItem",
+    "setBrightness",
+    "setLamp",
+    "changeHeat",
+    "setLights"
+   ],
+   "sounds": 50,
+   "sounds_gate": 43,
+   "speech": 27,
+   "speech_gate": 24
+  },
+  {
+   "tools": [
+    "callContact",
+    "setLamp",
+    "setAlarm",
+    "setBrightness"
+   ],
+   "sounds": 40,
+   "sounds_gate": 17,
+   "speech": 10,
+   "speech_gate": 8
+  },
+  {
+   "tools": [
+    "getWeather",
+    "setLanguage",
+    "goToBase"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 28,
+   "speech_gate": 35
+  },
+  {
+   "tools": [
+    "getBattery",
+    "changeHeat",
+    "cleanRoom",
+    "setAlarm",
+    "setLamp",
+    "setLanguage",
+    "takePhoto"
+   ],
+   "sounds": 49,
+   "sounds_gate": 50,
+   "speech": 9,
+   "speech_gate": 8
+  },
+  {
+   "tools": [
+    "setLanguage",
+    "callContact",
+    "setLights",
+    "setBrightness",
+    "changeVolume",
+    "getBattery",
+    "getWeather",
+    "goToBase"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 34,
+   "speech_gate": 32
+  },
+  {
+   "tools": [
+    "bringItem",
+    "getWeather",
+    "setMusic",
+    "openApp"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 30,
+   "speech_gate": 28
+  },
+  {
+   "tools": [
+    "cleanRoom",
+    "changeVolume",
+    "setAlarm",
+    "goToBase",
+    "bringItem",
+    "callContact",
+    "changeHeat",
+    "setTimer"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 34,
+   "speech_gate": 24
+  },
+  {
+   "tools": [
+    "takePhoto",
+    "callContact",
+    "changeHeat",
+    "bringItem",
+    "setAlarm"
+   ],
+   "sounds": 50,
+   "sounds_gate": 4,
+   "speech": 20,
+   "speech_gate": 20
+  },
+  {
+   "tools": [
+    "setBrightness",
+    "callContact",
+    "changeHeat",
+    "setLights",
+    "changeVolume",
+    "cleanRoom"
+   ],
+   "sounds": 12,
+   "sounds_gate": 43,
+   "speech": 6,
+   "speech_gate": 9
+  },
+  {
+   "tools": [
+    "setMusic",
+    "bringItem",
+    "openApp",
+    "changeHeat",
+    "setLamp",
+    "getBattery"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 27,
+   "speech_gate": 29
+  },
+  {
+   "tools": [
+    "openApp",
+    "setMusic",
+    "setLanguage",
+    "setLamp"
+   ],
+   "sounds": 46,
+   "sounds_gate": 4,
+   "speech": 4,
+   "speech_gate": 5
+  },
+  {
+   "tools": [
+    "setLanguage",
+    "getBattery",
+    "setTimer",
+    "setAlarm",
+    "takePhoto",
+    "bringItem",
+    "setMusic",
+    "setLamp"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 18,
+   "speech_gate": 20
+  },
+  {
+   "tools": [
+    "setLights",
+    "getBattery",
+    "setTimer",
+    "cleanRoom",
+    "getWeather",
+    "setMusic",
+    "openApp",
+    "bringItem"
+   ],
+   "sounds": 50,
+   "sounds_gate": 50,
+   "speech": 29,
+   "speech_gate": 29
+  },
+  {
+   "tools": [
+    "callContact",
+    "setLamp",
+    "setLights",
+    "getBattery",
+    "changeHeat",
+    "setTimer",
+    "setMusic"
+   ],
+   "sounds": 49,
+   "sounds_gate": 36,
+   "speech": 15,
+   "speech_gate": 15
+  },
+  {
+   "tools": [
+    "setBrightness",
+    "openApp",
+    "setMusic"
+   ],
+   "sounds": 1,
+   "sounds_gate": 3,
+   "speech": 1,
+   "speech_gate": 1
+  }
+ ]
+}

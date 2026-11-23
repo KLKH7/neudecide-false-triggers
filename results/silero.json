@@ -1,0 +1,258 @@
+{
+ "vad": {
+  "commands": {
+   "vad_says_speech": {
+    "count": 199,
+    "of": 200,
+    "share": 0.995,
+    "interval_95": [
+     0.9722,
+     0.9991
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 199,
+    "of": 200,
+    "share": 0.995,
+    "interval_95": [
+     0.9722,
+     0.9991
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 193,
+    "of": 200,
+    "share": 0.965,
+    "interval_95": [
+     0.9295,
+     0.9829
+    ]
+   },
+   "right_tool_after_vad/plain": {
+    "count": 186,
+    "of": 200,
+    "share": 0.93,
+    "interval_95": [
+     0.8859,
+     0.9578
+    ]
+   }
+  },
+  "speech": {
+   "vad_says_speech": {
+    "count": 300,
+    "of": 300,
+    "share": 1.0,
+    "interval_95": [
+     0.9874,
+     1.0
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 96,
+    "of": 300,
+    "share": 0.32,
+    "interval_95": [
+     0.2698,
+     0.3748
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 120,
+    "of": 300,
+    "share": 0.4,
+    "interval_95": [
+     0.3462,
+     0.4564
+    ]
+   }
+  },
+  "sounds": {
+   "vad_says_speech": {
+    "count": 8,
+    "of": 300,
+    "share": 0.0267,
+    "interval_95": [
+     0.0136,
+     0.0517
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 7,
+    "of": 300,
+    "share": 0.0233,
+    "interval_95": [
+     0.0113,
+     0.0474
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 0,
+    "of": 300,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.0126
+    ]
+   },
+   "kinds_passed": [
+    [
+     "sneezing",
+     2
+    ],
+    [
+     "insects",
+     1
+    ],
+    [
+     "coughing",
+     1
+    ],
+    [
+     "chainsaw",
+     1
+    ],
+    [
+     "toilet_flush",
+     1
+    ],
+    [
+     "laughing",
+     1
+    ],
+    [
+     "crying_baby",
+     1
+    ]
+   ]
+  },
+  "synthetic": {
+   "vad_says_speech": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   }
+  }
+ },
+ "conversation": {
+  "vad_says_speech": {
+   "count": 262,
+   "of": 300,
+   "share": 0.8733,
+   "interval_95": [
+    0.8309,
+    0.9063
+   ]
+  },
+  "median_peak_level": 0.0244,
+  "acted": {
+   "home": {
+    "count": 247,
+    "of": 300,
+    "share": 0.8233,
+    "interval_95": [
+     0.7762,
+     0.8623
+    ]
+   },
+   "home_gate": {
+    "count": 175,
+    "of": 300,
+    "share": 0.5833,
+    "interval_95": [
+     0.5268,
+     0.6377
+    ]
+   },
+   "home_without_bringItem": {
+    "count": 92,
+    "of": 300,
+    "share": 0.3067,
+    "interval_95": [
+     0.2572,
+     0.361
+    ]
+   }
+  },
+  "acted_peak_normalised": {
+   "home": {
+    "count": 242,
+    "of": 300,
+    "share": 0.8067,
+    "interval_95": [
+     0.7582,
+     0.8474
+    ]
+   },
+   "home_gate": {
+    "count": 178,
+    "of": 300,
+    "share": 0.5933,
+    "interval_95": [
+     0.5369,
+     0.6474
+    ]
+   },
+   "home_without_bringItem": {
+    "count": 91,
+    "of": 300,
+    "share": 0.3033,
+    "interval_95": [
+     0.2541,
+     0.3576
+    ]
+   }
+  },
+  "acted_after_vad": {
+   "home": {
+    "count": 215,
+    "of": 300,
+    "share": 0.7167,
+    "interval_95": [
+     0.6632,
+     0.7647
+    ]
+   },
+   "home_gate": {
+    "count": 166,
+    "of": 300,
+    "share": 0.5533,
+    "interval_95": [
+     0.4968,
+     0.6086
+    ]
+   },
+   "home_without_bringItem": {
+    "count": 82,
+    "of": 300,
+    "share": 0.2733,
+    "interval_95": [
+     0.226,
+     0.3264
+    ]
+   }
+  }
+ }
+}

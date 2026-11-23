@@ -1,105 +1,118 @@
-# NeuDecide: false triggers depend on the tool list
+# NeuDecide: what stops a false trigger, and what does not
 
-[NeuDecide](https://github.com/neuphonic/neudecide) turns speech straight into a tool call. Its README says it can fire on noise and suggests a gate, such as an explicit "no action" tool. This is a black-box test of how often it fires when nobody gave a command, and of that gate.
+[NeuDecide](https://github.com/neuphonic/neudecide) turns speech straight into a tool call. Its README says it can fire on noise and suggests putting a gate in front: voice-activity detection, or an explicit "no action" tool. This is a black-box test of both gates on audio with no command in it.
 
-**Short version: the answer swings between 2% and 99% depending on which tools are in the list, and I could not find a rule that predicts it.** The gate fixed it for two tool lists and not for a third.
+**What I found:**
 
-An earlier version of this page led with "98% of sounds trigger a call, the gate cuts it to 4%". Both figures are real but belong to one tool list; the controls below show they do not generalise. The limits are at the end.
+1. **A good voice-activity detector solves noise.** Silero VAD cut false calls on everyday sounds from 98% to 2%.
+2. **The "no action" tool mostly does not work.** Across 40 random tool lists it fixed 4 of the 36 that needed it.
+3. **Speech that is not a command is the open problem.** Neither gate helps. Meeting conversation recorded across a room triggered a tool call 82% of the time, and 72% with the detector in front.
+
+This page has been rewritten twice as controls overturned earlier readings; the history is at the end, with the limits.
 
 ## Setup
 
 | Set | Clips | What it is |
 | --- | ---: | --- |
 | Commands | 200 | Fluent Speech Commands test clips (smart-home commands, 73 speakers) |
-| Speech | 300 | LibriSpeech read audiobook speech: talking, but no command |
+| Read speech | 300 | LibriSpeech audiobook speech |
+| Meeting speech | 300 | AMI meeting utterances of 1.5 to 6 s, single distant microphone |
 | Sounds | 300 | ESC-50: dogs, rain, engines, keyboards |
 | Synthetic | 21 | Silence, white noise and pink noise at three levels |
 
-Three tool lists: seven smart-home tools I wrote ("home"), seven phone-assistant tools I wrote ("phone"), and the three robot-vacuum tools from NeuDecide's own example ("vendor"). The gate is a `noAction` tool with no parameters, placed last. Decoding is greedy, so each clip gives one answer. Brackets are 95% Wilson intervals.
+The main tool list is seven smart-home tools I wrote ("home"). Others: seven phone-assistant tools ("phone"), the three robot-vacuum tools from NeuDecide's own example ("vendor"), and 40 random lists of 3 to 8 tools drawn from all 17. The gate tool is `noAction`, no parameters, placed last. Decoding is greedy, so each clip gives one answer. Brackets are 95% Wilson intervals.
 
-## 1. It depends on the tool list
+## 1. Voice-activity detection solves noise, if the detector is good
 
-Share of clips with no command in them where the model called a tool:
+Share of clips where the model called a real tool, home list:
 
-| Tool list | Sounds (300) | Speech (300) |
+| | Sounds | Synthetic | Real commands kept |
+| --- | ---: | ---: | ---: |
+| No gate | 98% [96–99] | 20 of 21 | 200 of 200 |
+| Silero VAD in front | 2% [1–5] | 0 of 21 | 199 of 200 |
+| WebRTC VAD in front (strictest mode) | 80% [75–84] | 3 of 21 | 199 of 200 |
+
+A clip passes if the detector finds at least 0.3 s of speech. WebRTC VAD let 247 of 300 sounds through and rejected 273 of 300 meeting utterances, so the choice of detector matters.
+
+Without a detector, firing on sounds is the norm, not a quirk of one tool list: 34 of 40 random lists fired on at least 90% of sounds, and 3 fired on 10% or fewer.
+
+## 2. The "no action" tool is not a reliable gate
+
+Across the 40 random tool lists, 50 sound clips each:
+
+| | Lists |
+| --- | ---: |
+| Fired on at least half the sounds without the gate | 36 |
+| … of those, 10% or fewer with `noAction` added | 4 |
+| … of those, still at least half | 28 |
+
+The median list fired on 100% of sounds without the gate and 97% with it. The two lists I tested first (home and vendor) both happened to be among the few it fixes, 98% to 4%. With the phone list 98% still fired.
+
+When it does work it costs real commands: right tool 93% [89–96] without it, 88.5% [83–92] with it, on the home list. It took 7 of 200 commands ("Stop", "Resume", "Too quiet").
+
+Position has its own effect. A tool with no parameters that is not a gate (`getBattery`) took most of the false calls when placed first and few when placed last.
+
+## 3. Speech that is not a command
+
+No detector can remove this, since it is speech.
+
+| Home list | Read speech | Meeting speech |
 | --- | ---: | ---: |
-| Home, seven tools | 98% [96–99] | 32% [27–37] |
-| Home without `bringItem`, six tools | 2% [1–5] | 6% [4–9] |
-| Vendor example, three tools | 97% [95–99] | 23% [19–28] |
-| Phone, seven tools | 99% [98–100] | 41% [35–46] |
+| No gate | 32% [27–37] | 82% [78–86] |
+| `noAction` tool | 40% [35–46] | 58% [53–64] |
+| Silero VAD in front | 32% | 72% [66–76] |
+| Both | 40% | 55% [50–61] |
 
-Removing one tool took the home list from 98% to 2%. On the first 100 sound clips:
+- **Across tool lists** the read-speech figure runs from 2% to 74%, median 32% without the gate and 33% with it.
+- **Shorter is worse.** Read speech cut to its first 3 seconds fired 56% of the time.
+- **It is not loudness.** Meeting clips are quiet (median peak 0.02); scaled to full level they fired 81% of the time.
+- **Other lists agree on meetings:** vendor 67%, phone 89%; with `noAction` 30% and 61%.
+- **Commands for another device fire too.** 42% of the smart-home commands called a vacuum tool from the vendor list.
 
-| Change to the home list | Fired | Tool that took the calls |
-| --- | ---: | --- |
-| None | 99 | `bringItem` |
-| Remove `bringItem` | 2 | |
-| Remove `setLamp` instead | 100 | `bringItem`, `setLanguage` |
-| Rename `bringItem` to `orderTaxi` | 99 | `orderTaxi` |
-| Rewrite its description | 99 | `bringItem` |
-| Make its argument free text | 100 | `bringItem` |
-| Swap it for `takePhoto` | 89 | `takePhoto` |
-| Swap it for `openApp` | 19 | `openApp` |
+Examples from meetings, home list: "Thank you very much" called `bringItem(socks)`; "Welcome back" called `setLights(on)`.
 
-So it is not the tool's name, its description, the number of tools or its position (moving it first changed nothing). Offered on its own, `bringItem` fired on 68 of 100 sounds; `takePhoto`, which took 83 calls when swapped in, fired on 0 of 100 alone. I do not know what makes a tool attract these calls.
+## Checks that this is not my own artefact
 
-## 2. The gate works for some tool lists
+- A WAV file path and the array give the same answer on 94 of 96 clips. The two differences come from 16-bit rounding, which changes the answer on 15 of 200 non-command clips.
+- With the output grammar off, 99 of 100 sounds still produce a call.
+- NeuDecide's own example tools behave like mine.
 
-Sounds that still called a real tool with `noAction` added:
+## Limits
 
-| Tool list | No gate | With `noAction` |
-| --- | ---: | ---: |
-| Home | 98% | 4% [3–7] |
-| Vendor example | 97% | 4% [3–7] |
-| Phone | 99% | 98% [96–99] |
+- **Black box.** I do not know why a tool list fires or not. One list of six fired on 2% of sounds; adding one tool took it to 98%; renaming that tool changed nothing.
+- **Tools and wording are mine.** 17 tools in one writing style and one `noAction` wording. A second wording (`ignore`) did worse.
+- **Meeting speech is a hard case.** AMI is recorded far from the speakers, and the meetings are about designing a remote control, so words like "volume" come up. One meeting split, 300 utterances.
+- **The 0.3 s detector rule is my choice.** A stricter rule would pass less and lose more commands.
+- **No general accuracy figure.** Fluent Speech Commands is small and clean, and I wrote the sentence-to-tool mapping.
+- **Not a bug list.** Calls sometimes lack a required argument or use a value outside an `enum`; the grammar is documented as constraining names and keys only.
+- Intervals treat clips as independent, though the sets have several clips per sound type or speaker.
 
-On real commands with the home list, the right tool was chosen 93% [89–96] without the gate and 88.5% [83–92] with it. The gate took 7 of 200 real commands ("Stop", "Resume", "Too quiet").
+## How this page changed
 
-Position matters separately from meaning. A tool with no parameters that is not a gate (`getBattery`) took 308 of the false calls when placed first and 27 when placed last. A gate named `ignore` cut sounds to 3% when first and left 91% when last, so its success when first may be position, not meaning.
-
-## 3. Speech
-
-False calls on speech with no command ranged from 6% to 57% across the lists above. Two things move it more than the gate does:
-
-- **Length.** The same clips cut to their first 3 seconds fired 56% of the time, against 32% in full.
-- **Any extra tool.** Adding `getBattery` last raised it from 32% to 57%. Adding `noAction` raised it to 40%, which I first read as the gate backfiring. It is inside the swing any added tool causes, so I make no claim about the gate on speech.
-
-Commands meant for another device also fire: 42% of the smart-home commands called a vacuum tool from the vendor list.
-
-## 4. Small input changes flip answers
-
-The same clip as float samples and as 16-bit samples gave a different answer for 15 of 200 clips with no command in them.
-
-## What I checked that could have made this an artefact
-
-- **My audio handling.** A WAV file path and the array gave the same answer on 94 of 96 clips; the two differences are the 16-bit effect above.
-- **The output grammar.** With constrained decoding off, 99 of 100 sounds still produced a call.
-- **My tool lists.** NeuDecide's own example tools behave the same way (97%).
-
-## What this does not show
-
-- **Why.** This is a black-box test. I have no explanation for which tools attract calls.
-- **Real deployment rates.** NeuDecide's README says to put voice-activity detection in front, which should remove most of the sounds and noise cases. I did not test with it. Read audiobook speech is also not conversation near a device.
-- **A general accuracy figure.** Fluent Speech Commands is small and clean, and I wrote the mapping from sentence to tool.
-- **Schema violations as a bug.** Calls sometimes lack a required argument or use a value outside an `enum`. The NeuDecide grammar is documented as constraining tool names and argument keys only, so this is by design.
-- **Many tool lists.** Four lists and a handful of swaps. Enough to show the rate is unstable, not to map when.
-- Intervals treat clips as independent, though ESC-50 has several clips per sound type and LibriSpeech several per speaker.
+1. First: "98% of sounds trigger a call; the `noAction` tool cuts it to 4%." True for one tool list.
+2. Then: "the rate swings from 2% to 99% with the tool list." Four lists made that look typical. Forty random lists show nearly all fire, and the 2% list was the outlier.
+3. Now: as above, after adding the detector and meeting speech.
 
 ## Reproduce
 
 Needs a Hugging Face account with access to `neuphonic/neudecide`.
 
 ```sh
-pip install neudecide pyarrow soundfile numpy huggingface_hub
+pip install neudecide pyarrow soundfile numpy huggingface_hub webrtcvad-wheels
 git clone --depth 1 https://github.com/neuphonic/neudecide upstream   # for its example tools
-sh fetch.sh           # about 520 MB of public audio into data/
-python run.py         # home list, with and without gates -> results/summary.json
-python checks.py      # tool order, schema check -> results/checks.json
-python controls.py    # other tool lists and artefact checks -> results/controls.json
-python sinks.py       # each tool alone, renames -> results/sinks.json
-python swap.py        # swapping and dropping tools -> results/swap.json
+sh fetch.sh              # about 740 MB of public audio and the Silero model into data/
+python run.py            # home list, with and without the gate tool
+python checks.py         # tool order
+python controls.py       # other tool lists and artefact checks
+python sinks.py          # each tool alone, renames
+python swap.py           # swapping and dropping tools
+python random_lists.py   # 40 random tool lists (slow)
+python vad_conv.py       # WebRTC VAD, meeting speech
+python silero_check.py   # Silero VAD, loudness check
 ```
+
+Results are in `results/`.
 
 ## Credits
 
-Fluent Speech Commands (Lugosch et al., 2019), LibriSpeech (Panayotov et al., 2015, CC BY 4.0), ESC-50 (Piczak, 2015, CC BY-NC).
+Fluent Speech Commands (Lugosch et al., 2019), LibriSpeech (Panayotov et al., 2015, CC BY 4.0), AMI Meeting Corpus (Carletta et al., 2005, CC BY 4.0), ESC-50 (Piczak, 2015, CC BY-NC), Silero VAD (MIT).

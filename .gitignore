@@ -2,3 +2,4 @@ data/
 upstream/
 .venv/
 __pycache__/
+random_lists.log

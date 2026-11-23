@@ -1,0 +1,322 @@
+{
+ "vad": {
+  "commands": {
+   "vad_says_speech": {
+    "count": 199,
+    "of": 200,
+    "share": 0.995,
+    "interval_95": [
+     0.9722,
+     0.9991
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 199,
+    "of": 200,
+    "share": 0.995,
+    "interval_95": [
+     0.9722,
+     0.9991
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 193,
+    "of": 200,
+    "share": 0.965,
+    "interval_95": [
+     0.9295,
+     0.9829
+    ]
+   },
+   "right_tool_after_vad/plain": {
+    "count": 186,
+    "of": 200,
+    "share": 0.93,
+    "interval_95": [
+     0.8859,
+     0.9578
+    ]
+   },
+   "right_tool_after_vad/gate": {
+    "count": 177,
+    "of": 200,
+    "share": 0.885,
+    "interval_95": [
+     0.8334,
+     0.9221
+    ]
+   }
+  },
+  "speech": {
+   "vad_says_speech": {
+    "count": 300,
+    "of": 300,
+    "share": 1.0,
+    "interval_95": [
+     0.9874,
+     1.0
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 96,
+    "of": 300,
+    "share": 0.32,
+    "interval_95": [
+     0.2698,
+     0.3748
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 120,
+    "of": 300,
+    "share": 0.4,
+    "interval_95": [
+     0.3462,
+     0.4564
+    ]
+   }
+  },
+  "sounds": {
+   "vad_says_speech": {
+    "count": 247,
+    "of": 300,
+    "share": 0.8233,
+    "interval_95": [
+     0.7762,
+     0.8623
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 241,
+    "of": 300,
+    "share": 0.8033,
+    "interval_95": [
+     0.7546,
+     0.8444
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 13,
+    "of": 300,
+    "share": 0.0433,
+    "interval_95": [
+     0.0255,
+     0.0727
+    ]
+   }
+  },
+  "synthetic": {
+   "vad_says_speech": {
+    "count": 3,
+    "of": 21,
+    "share": 0.1429,
+    "interval_95": [
+     0.0498,
+     0.3464
+    ]
+   },
+   "acted_after_vad/plain": {
+    "count": 3,
+    "of": 21,
+    "share": 0.1429,
+    "interval_95": [
+     0.0498,
+     0.3464
+    ]
+   },
+   "acted_after_vad/gate": {
+    "count": 0,
+    "of": 21,
+    "share": 0.0,
+    "interval_95": [
+     0.0,
+     0.1546
+    ]
+   }
+  }
+ },
+ "conversation": {
+  "vad_says_speech": {
+   "count": 27,
+   "of": 300,
+   "share": 0.09,
+   "interval_95": [
+    0.0626,
+    0.1278
+   ]
+  },
+  "acted": {
+   "home": {
+    "count": 247,
+    "of": 300,
+    "share": 0.8233,
+    "interval_95": [
+     0.7762,
+     0.8623
+    ]
+   },
+   "home_gate": {
+    "count": 175,
+    "of": 300,
+    "share": 0.5833,
+    "interval_95": [
+     0.5268,
+     0.6377
+    ]
+   },
+   "home_without_bringItem": {
+    "count": 92,
+    "of": 300,
+    "share": 0.3067,
+    "interval_95": [
+     0.2572,
+     0.361
+    ]
+   },
+   "vendor": {
+    "count": 200,
+    "of": 300,
+    "share": 0.6667,
+    "interval_95": [
+     0.6115,
+     0.7176
+    ]
+   },
+   "vendor_gate": {
+    "count": 90,
+    "of": 300,
+    "share": 0.3,
+    "interval_95": [
+     0.2509,
+     0.3541
+    ]
+   },
+   "phone": {
+    "count": 266,
+    "of": 300,
+    "share": 0.8867,
+    "interval_95": [
+     0.8458,
+     0.9178
+    ]
+   },
+   "phone_gate": {
+    "count": 182,
+    "of": 300,
+    "share": 0.6067,
+    "interval_95": [
+     0.5504,
+     0.6603
+    ]
+   }
+  },
+  "examples_home": [
+   [
+    "NO I'M GO AHEAD",
+    {
+     "name": "setLamp",
+     "arguments": {
+      "state": "on"
+     }
+    }
+   ],
+   [
+    "I HAVE SOME UH CALCULATIONS WHICH I MADE UH AS FOR UH THE BUDGET",
+    {
+     "name": "bringItem",
+     "arguments": {
+      "item": "socks"
+     }
+    }
+   ],
+   [
+    "OVER AND THE MEANTIME LET'S CELEBRATE",
+    {
+     "name": "setMusic",
+     "arguments": {
+      "state": "play"
+     }
+    }
+   ],
+   [
+    "THANK YOU VERY MUCH",
+    {
+     "name": "bringItem",
+     "arguments": {
+      "item": "socks"
+     }
+    }
+   ],
+   [
+    "SO THAT'S PRETTY MUCH IT FOR OUR PRESENTATION ACTUALLY",
+    {
+     "name": "bringItem",
+     "arguments": {}
+    }
+   ],
+   [
+    "SO LET'S MEET UP UH THIS EVENING TO HANG UP FOR SOME PARTY",
+    {
+     "name": "bringItem",
+     "arguments": {
+      "item": "socks"
+     }
+    }
+   ],
+   [
+    "AND YOU DON'T WANNA LET GO OF EITHER ONE",
+    {
+     "name": "bringItem",
+     "arguments": {
+      "item": "juice"
+     }
+    }
+   ],
+   [
+    "OKAY LET'S TALK ABOUT UH MAYBE FIRST UH FOR THE PROTOTYPE",
+    {
+     "name": "setMusic",
+     "arguments": {
+      "state": "play"
+     }
+    }
+   ],
+   [
+    "RIGHT BEFORE THE EUR THE WORLD CUP",
+    {
+     "name": "bringItem",
+     "arguments": {
+      "item": "shoes"
+     }
+    }
+   ],
+   [
+    "SO UP VOLUME UP DOWN VOLUME DOWN",
+    {
+     "name": "changeVolume",
+     "arguments": {
+      "direction": "down"
+     }
+    }
+   ],
+   [
+    "WELCOME BACK",
+    {
+     "name": "setLights",
+     "arguments": {
+      "state": "on"
+     }
+    }
+   ],
+   [
+    "I THINK WE PRETTY MUCH COVERED EVERYTHING",
+    {
+     "name": "setLanguage",
+     "arguments": {
+      "language": "Korean"
+     }
+    }
+   ]
+  ]
+ }
+}

@@ -11,3 +11,9 @@ hf_hub_download('macabdul9/IntentClassification_FluentSpeechCommands-Action', 'd
 hf_hub_download('ashraq/esc50', 'data/train-00000-of-00002-2f1ab7b824ec751f.parquet',
                 repo_type='dataset', local_dir='esc50')
 PY
+python - <<'PY'
+from huggingface_hub import hf_hub_download
+hf_hub_download('edinburghcstr/ami', 'sdm/validation-00004-of-00005.parquet', repo_type='dataset', local_dir='ami')
+PY
+mkdir -p silero
+curl -sSL -o silero/silero_vad.onnx https://github.com/snakers4/silero-vad/raw/master/src/silero_vad/data/silero_vad.onnx
