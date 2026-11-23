@@ -5,10 +5,10 @@
 **What I found:**
 
 1. **A good voice-activity detector solves noise.** Silero VAD cut false calls on everyday sounds from 98% to 2%.
-2. **The "no action" tool mostly does not work.** Across 40 random tool lists it fixed 4 of the 36 that needed it.
-3. **Speech that is not a command is the open problem.** Neither gate helps. Meeting conversation recorded across a room triggered a tool call 82% of the time, and 72% with the detector in front.
+2. **The "no action" tool depends on its wording.** Named `doNothing` it fixed sounds for 10 of 20 random tool lists; with my first wording, 3 of 20. It costs about 6% of real commands.
+3. **Speech that is not a command is the open problem.** Meeting conversation triggered a tool call 82% of the time. The detector, the best gate wording and a confidence threshold each helped, and none got it below about 40%.
 
-This page has been rewritten twice as controls overturned earlier readings; the history is at the end, with the limits.
+This page has been rewritten three times as controls overturned earlier readings; the history is at the end, with the limits.
 
 ## Setup
 
@@ -36,38 +36,54 @@ A clip passes if the detector finds at least 0.3 s of speech. WebRTC VAD let 247
 
 Without a detector, firing on sounds is the norm, not a quirk of one tool list: 34 of 40 random lists fired on at least 90% of sounds, and 3 fired on 10% or fewer.
 
-## 2. The "no action" tool is not a reliable gate
+## 2. The "no action" tool depends on its wording
 
-Across the 40 random tool lists, 50 sound clips each:
+I first tested one wording: `noAction`, "Use when the audio is not a command for this device: conversation, background noise or silence." Across 40 random tool lists it brought sounds to 10% or fewer for 4 of the 36 lists that fired on at least half of them.
 
-| | Lists |
-| --- | ---: |
-| Fired on at least half the sounds without the gate | 36 |
-| … of those, 10% or fewer with `noAction` added | 4 |
-| … of those, still at least half | 28 |
+Then five wordings on 12 lists. The best was `doNothing`, "Do nothing." Checked on 20 lists it was not chosen on, 40 sound clips each:
 
-The median list fired on 100% of sounds without the gate and 97% with it. The two lists I tested first (home and vendor) both happened to be among the few it fixes, 98% to 4%. With the phone list 98% still fired.
+| Gate | Median list: sounds fired | Lists at 10% or fewer |
+| --- | ---: | ---: |
+| None | 100% | 2 of 20 |
+| `noAction`, long description | 98% | 3 of 20 |
+| `noAction`, "Do nothing." | 54% | 5 of 20 |
+| `doNothing`, long description | 44% | 10 of 20 |
+| `doNothing`, "Do nothing." | 14% | 10 of 20 |
 
-When it does work it costs real commands: right tool 93% [89–96] without it, 88.5% [83–92] with it, on the home list. It took 7 of 200 commands ("Stop", "Resume", "Too quiet").
+Both the name and the description matter, and the best wording still fails for half the lists.
+
+It costs real commands. On the home list the right tool was chosen 93% [89–96] with no gate, 88.5% [83–92] with `noAction` and 87% [82–91] with `doNothing`, which took 14 of 200 commands for itself.
 
 Position has its own effect. A tool with no parameters that is not a gate (`getBattery`) took most of the false calls when placed first and few when placed last.
 
 ## 3. Speech that is not a command
 
-No detector can remove this, since it is speech.
+No detector can remove this, since it is speech. Home list, share of clips that called a real tool:
 
-| Home list | Read speech | Meeting speech |
+| | Read speech | Meeting speech |
 | --- | ---: | ---: |
 | No gate | 32% [27–37] | 82% [78–86] |
-| `noAction` tool | 40% [35–46] | 58% [53–64] |
 | Silero VAD in front | 32% | 72% [66–76] |
-| Both | 40% | 55% [50–61] |
+| `noAction` tool | 40% [35–46] | 58% [53–64] |
+| `doNothing` tool | 36% [30–41] | 41% [35–46] |
+| `doNothing` and VAD | | 39% [33–44] |
 
-- **Across tool lists** the read-speech figure runs from 2% to 74%, median 32% without the gate and 33% with it.
-- **Shorter is worse.** Read speech cut to its first 3 seconds fired 56% of the time.
-- **It is not loudness.** Meeting clips are quiet (median peak 0.02); scaled to full level they fired 81% of the time.
-- **Other lists agree on meetings:** vendor 67%, phone 89%; with `noAction` 30% and 61%.
-- **Commands for another device fire too.** 42% of the smart-home commands called a vacuum tool from the vendor list.
+Across the 20 fresh tool lists the median list fired on 74% of meeting clips with no gate and 49% with `doNothing`. No list got to 10% or fewer. (On the 12 lists used to pick the wording, 4 did; that did not repeat.) The `doNothing` name with the long description did better on meeting clips, 31%, with 2 of 20 lists at 10% or fewer, and worse on sounds, so no one wording wins on both.
+
+What the meeting result is not:
+
+- **Not distance.** The same utterances from the speakers' headset microphones fired 73% of the time, against 82% from across the room (293 pairs).
+- **Not loudness.** Meeting clips are quiet (median peak 0.02); scaled to full level they fired 81%.
+- **Not command-like words.** Leaving out every utterance with a word a smart-home tool could act on ("volume", "light", "turn" and so on), 81% of the remaining 278 fired.
+- **Not one tool list.** Vendor 67%, phone 89%.
+
+**A confidence threshold helps partly.** NeuDecide has no confidence score, but the decoder's token probabilities are available. The mean log-probability of the first four tokens separates real commands from false calls with an AUC of 0.93. A threshold chosen on half the clips to keep 95% of commands, applied to the other half, kept 96 of 101 commands and cut meeting false calls from 85% to 54%.
+
+Other things that move the speech figure:
+
+- **Tool list.** Read speech ran from 2% to 74% across 40 random lists, median 32%.
+- **Length.** Read speech cut to its first 3 seconds fired 56% of the time.
+- **Another device's commands.** 42% of the smart-home commands called a vacuum tool from the vendor list.
 
 Examples from meetings, home list: "Thank you very much" called `bringItem(socks)`; "Welcome back" called `setLights(on)`.
 
@@ -80,7 +96,8 @@ Examples from meetings, home list: "Thank you very much" called `bringItem(socks
 ## Limits
 
 - **Black box.** I do not know why a tool list fires or not. One list of six fired on 2% of sounds; adding one tool took it to 98%; renaming that tool changed nothing.
-- **Tools and wording are mine.** 17 tools in one writing style and one `noAction` wording. A second wording (`ignore`) did worse.
+- **Tools and wording are mine.** 17 tools in one writing style and five gate wordings. A sixth wording could do better than `doNothing`; nothing here says which wording is best in general.
+- **The confidence threshold is fitted and tested on one tool list.**
 - **Meeting speech is a hard case.** AMI is recorded far from the speakers, and the meetings are about designing a remote control, so words like "volume" come up. One meeting split, 300 utterances.
 - **The 0.3 s detector rule is my choice.** A stricter rule would pass less and lose more commands.
 - **No general accuracy figure.** Fluent Speech Commands is small and clean, and I wrote the sentence-to-tool mapping.
@@ -91,7 +108,8 @@ Examples from meetings, home list: "Thank you very much" called `bringItem(socks
 
 1. First: "98% of sounds trigger a call; the `noAction` tool cuts it to 4%." True for one tool list.
 2. Then: "the rate swings from 2% to 99% with the tool list." Four lists made that look typical. Forty random lists show nearly all fire, and the 2% list was the outlier.
-3. Now: as above, after adding the detector and meeting speech.
+3. Then: "the `noAction` tool fixed 4 of 36 lists, so the gate tool mostly does not work." True of that wording. A different wording fixed half.
+4. Now: as above.
 
 ## Reproduce
 
@@ -100,7 +118,7 @@ Needs a Hugging Face account with access to `neuphonic/neudecide`.
 ```sh
 pip install neudecide pyarrow soundfile numpy huggingface_hub webrtcvad-wheels
 git clone --depth 1 https://github.com/neuphonic/neudecide upstream   # for its example tools
-sh fetch.sh              # about 740 MB of public audio and the Silero model into data/
+sh fetch.sh              # about 980 MB of public audio and the Silero model into data/
 python run.py            # home list, with and without the gate tool
 python checks.py         # tool order
 python controls.py       # other tool lists and artefact checks
@@ -109,6 +127,9 @@ python swap.py           # swapping and dropping tools
 python random_lists.py   # 40 random tool lists (slow)
 python vad_conv.py       # WebRTC VAD, meeting speech
 python silero_check.py   # Silero VAD, loudness check
+python wordings.py       # five gate wordings on 12 lists (slow)
+python do_nothing.py     # the best wording on 20 fresh lists, and its cost
+python confidence.py     # headset microphone, command words, confidence threshold
 ```
 
 Results are in `results/`.

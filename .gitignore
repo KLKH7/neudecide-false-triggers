@@ -3,3 +3,4 @@ upstream/
 .venv/
 __pycache__/
 random_lists.log
+wordings.log

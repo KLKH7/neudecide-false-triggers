@@ -1,0 +1,340 @@
+{
+ "of": 40,
+ "median_fired": {
+  "sounds": {
+   "none_added": 39.5,
+   "noAction": 38.0,
+   "no_action": 39.0,
+   "none": 39.5,
+   "notACommand": 39.5,
+   "doNothing": 2.5
+  },
+  "meeting": {
+   "none_added": 26.0,
+   "noAction": 16.0,
+   "no_action": 24.5,
+   "none": 24.0,
+   "notACommand": 12.0,
+   "doNothing": 9.5
+  }
+ },
+ "lists_cut_to_10pct_or_less": {
+  "sounds": {
+   "none_added": 1,
+   "noAction": 3,
+   "no_action": 1,
+   "none": 1,
+   "notACommand": 1,
+   "doNothing": 9
+  },
+  "meeting": {
+   "none_added": 0,
+   "noAction": 0,
+   "no_action": 0,
+   "none": 0,
+   "notACommand": 0,
+   "doNothing": 4
+  }
+ },
+ "lists": [
+  {
+   "tools": [
+    "setLights",
+    "setLamp",
+    "setAlarm",
+    "setBrightness"
+   ],
+   "sounds": {
+    "none_added": 1,
+    "noAction": 1,
+    "no_action": 3,
+    "none": 1,
+    "notACommand": 1,
+    "doNothing": 0
+   },
+   "meeting": {
+    "none_added": 10,
+    "noAction": 8,
+    "no_action": 15,
+    "none": 15,
+    "notACommand": 6,
+    "doNothing": 2
+   }
+  },
+  {
+   "tools": [
+    "changeVolume",
+    "cleanRoom",
+    "setTimer",
+    "setMusic",
+    "setBrightness",
+    "goToBase",
+    "setLanguage",
+    "callContact"
+   ],
+   "sounds": {
+    "none_added": 40,
+    "noAction": 40,
+    "no_action": 40,
+    "none": 40,
+    "notACommand": 40,
+    "doNothing": 8
+   },
+   "meeting": {
+    "none_added": 31,
+    "noAction": 24,
+    "no_action": 29,
+    "none": 30,
+    "notACommand": 18,
+    "doNothing": 17
+   }
+  },
+  {
+   "tools": [
+    "setMusic",
+    "setLights",
+    "callContact",
+    "getWeather"
+   ],
+   "sounds": {
+    "none_added": 40,
+    "noAction": 33,
+    "no_action": 39,
+    "none": 40,
+    "notACommand": 40,
+    "doNothing": 0
+   },
+   "meeting": {
+    "none_added": 25,
+    "noAction": 15,
+    "no_action": 27,
+    "none": 22,
+    "notACommand": 11,
+    "doNothing": 3
+   }
+  },
+  {
+   "tools": [
+    "changeVolume",
+    "cleanRoom",
+    "getBattery"
+   ],
+   "sounds": {
+    "none_added": 7,
+    "noAction": 1,
+    "no_action": 6,
+    "none": 24,
+    "notACommand": 28,
+    "doNothing": 1
+   },
+   "meeting": {
+    "none_added": 14,
+    "noAction": 7,
+    "no_action": 17,
+    "none": 12,
+    "notACommand": 10,
+    "doNothing": 7
+   }
+  },
+  {
+   "tools": [
+    "takePhoto",
+    "getWeather",
+    "setLamp"
+   ],
+   "sounds": {
+    "none_added": 40,
+    "noAction": 4,
+    "no_action": 38,
+    "none": 39,
+    "notACommand": 38,
+    "doNothing": 0
+   },
+   "meeting": {
+    "none_added": 18,
+    "noAction": 10,
+    "no_action": 20,
+    "none": 23,
+    "notACommand": 6,
+    "doNothing": 1
+   }
+  },
+  {
+   "tools": [
+    "getBattery",
+    "getWeather",
+    "openApp"
+   ],
+   "sounds": {
+    "none_added": 39,
+    "noAction": 40,
+    "no_action": 40,
+    "none": 40,
+    "notACommand": 40,
+    "doNothing": 4
+   },
+   "meeting": {
+    "none_added": 27,
+    "noAction": 17,
+    "no_action": 26,
+    "none": 32,
+    "notACommand": 13,
+    "doNothing": 12
+   }
+  },
+  {
+   "tools": [
+    "bringItem",
+    "cleanRoom",
+    "getWeather",
+    "takePhoto",
+    "getBattery",
+    "changeHeat",
+    "changeVolume",
+    "callContact"
+   ],
+   "sounds": {
+    "none_added": 40,
+    "noAction": 39,
+    "no_action": 40,
+    "none": 40,
+    "notACommand": 40,
+    "doNothing": 35
+   },
+   "meeting": {
+    "none_added": 39,
+    "noAction": 28,
+    "no_action": 39,
+    "none": 36,
+    "notACommand": 20,
+    "doNothing": 32
+   }
+  },
+  {
+   "tools": [
+    "getWeather",
+    "getBattery",
+    "bringItem",
+    "setBrightness",
+    "callContact",
+    "setMusic",
+    "goToBase",
+    "cleanRoom"
+   ],
+   "sounds": {
+    "none_added": 40,
+    "noAction": 40,
+    "no_action": 40,
+    "none": 40,
+    "notACommand": 40,
+    "doNothing": 40
+   },
+   "meeting": {
+    "none_added": 38,
+    "noAction": 29,
+    "no_action": 37,
+    "none": 38,
+    "notACommand": 23,
+    "doNothing": 31
+   }
+  },
+  {
+   "tools": [
+    "callContact",
+    "setLamp",
+    "setMusic"
+   ],
+   "sounds": {
+    "none_added": 38,
+    "noAction": 37,
+    "no_action": 36,
+    "none": 37,
+    "notACommand": 37,
+    "doNothing": 0
+   },
+   "meeting": {
+    "none_added": 20,
+    "noAction": 16,
+    "no_action": 23,
+    "none": 20,
+    "notACommand": 9,
+    "doNothing": 2
+   }
+  },
+  {
+   "tools": [
+    "callContact",
+    "cleanRoom",
+    "setBrightness"
+   ],
+   "sounds": {
+    "none_added": 22,
+    "noAction": 28,
+    "no_action": 34,
+    "none": 34,
+    "notACommand": 36,
+    "doNothing": 3
+   },
+   "meeting": {
+    "none_added": 15,
+    "noAction": 13,
+    "no_action": 20,
+    "none": 20,
+    "notACommand": 9,
+    "doNothing": 7
+   }
+  },
+  {
+   "tools": [
+    "goToBase",
+    "setBrightness",
+    "takePhoto",
+    "callContact",
+    "getWeather",
+    "setAlarm"
+   ],
+   "sounds": {
+    "none_added": 40,
+    "noAction": 39,
+    "no_action": 40,
+    "none": 40,
+    "notACommand": 40,
+    "doNothing": 2
+   },
+   "meeting": {
+    "none_added": 36,
+    "noAction": 16,
+    "no_action": 32,
+    "none": 33,
+    "notACommand": 23,
+    "doNothing": 17
+   }
+  },
+  {
+   "tools": [
+    "setLanguage",
+    "setAlarm",
+    "openApp",
+    "changeHeat",
+    "setBrightness",
+    "setMusic"
+   ],
+   "sounds": {
+    "none_added": 35,
+    "noAction": 39,
+    "no_action": 39,
+    "none": 39,
+    "notACommand": 39,
+    "doNothing": 3
+   },
+   "meeting": {
+    "none_added": 28,
+    "noAction": 16,
+    "no_action": 21,
+    "none": 25,
+    "notACommand": 16,
+    "doNothing": 14
+   }
+  }
+ ]
+}

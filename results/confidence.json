@@ -1,0 +1,173 @@
+{
+ "close_mic": {
+  "distant": {
+   "count": 241,
+   "of": 293,
+   "share": 0.8225,
+   "interval_95": [
+    0.7747,
+    0.862
+   ]
+  },
+  "headset": {
+   "count": 215,
+   "of": 293,
+   "share": 0.7338,
+   "interval_95": [
+    0.6804,
+    0.7811
+   ]
+  },
+  "fired_on_both": 200,
+  "only_distant": 41,
+  "only_headset": 15
+ },
+ "wording": {
+  "no_home_word": {
+   "count": 226,
+   "of": 278,
+   "share": 0.8129,
+   "interval_95": [
+    0.763,
+    0.8544
+   ]
+  },
+  "has_home_word": {
+   "count": 21,
+   "of": 22,
+   "share": 0.9545,
+   "interval_95": [
+    0.782,
+    0.9919
+   ]
+  }
+ },
+ "confidence": {
+  "auc_on_fitting_half": {
+   "mean": 0.9,
+   "min": 0.905,
+   "early": 0.916
+  },
+  "score_used": "early",
+  "threshold": -0.035,
+  "auc_on_test_half": 0.931,
+  "commands": {
+   "fired": {
+    "count": 101,
+    "of": 101,
+    "share": 1.0,
+    "interval_95": [
+     0.9634,
+     1.0
+    ]
+   },
+   "fired_above_threshold": {
+    "count": 97,
+    "of": 101,
+    "share": 0.9604,
+    "interval_95": [
+     0.9026,
+     0.9845
+    ]
+   },
+   "right_tool": {
+    "count": 98,
+    "of": 101,
+    "share": 0.9703,
+    "interval_95": [
+     0.9163,
+     0.9898
+    ]
+   },
+   "right_tool_above_threshold": {
+    "count": 96,
+    "of": 101,
+    "share": 0.9505,
+    "interval_95": [
+     0.8893,
+     0.9787
+    ]
+   }
+  },
+  "meeting": {
+   "fired": {
+    "count": 126,
+    "of": 148,
+    "share": 0.8514,
+    "interval_95": [
+     0.7852,
+     0.8997
+    ]
+   },
+   "fired_above_threshold": {
+    "count": 80,
+    "of": 148,
+    "share": 0.5405,
+    "interval_95": [
+     0.4602,
+     0.6188
+    ]
+   }
+  },
+  "speech": {
+   "fired": {
+    "count": 52,
+    "of": 152,
+    "share": 0.3421,
+    "interval_95": [
+     0.2714,
+     0.4206
+    ]
+   },
+   "fired_above_threshold": {
+    "count": 22,
+    "of": 152,
+    "share": 0.1447,
+    "interval_95": [
+     0.0976,
+     0.2094
+    ]
+   }
+  },
+  "sounds": {
+   "fired": {
+    "count": 153,
+    "of": 156,
+    "share": 0.9808,
+    "interval_95": [
+     0.945,
+     0.9934
+    ]
+   },
+   "fired_above_threshold": {
+    "count": 134,
+    "of": 156,
+    "share": 0.859,
+    "interval_95": [
+     0.7957,
+     0.905
+    ]
+   }
+  },
+  "synthetic": {
+   "fired": {
+    "count": 9,
+    "of": 10,
+    "share": 0.9,
+    "interval_95": [
+     0.5958,
+     0.9821
+    ]
+   },
+   "fired_above_threshold": {
+    "count": 8,
+    "of": 10,
+    "share": 0.8,
+    "interval_95": [
+     0.4902,
+     0.9433
+    ]
+   }
+  }
+ }
+}
